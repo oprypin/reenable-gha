@@ -1,0 +1,13 @@
+[Unit]
+Description=Re-enable GitHub Actions scheduled workflows
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+DynamicUser=yes
+Environment="GITHUB_TOKEN=****************************************"
+ExecStart=/usr/bin/python /full/path/to/reenable-gha/reenable.py
+
+[Install]
+RequiredBy=multi-user.target
