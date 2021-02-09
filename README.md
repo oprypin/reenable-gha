@@ -9,7 +9,14 @@ If you're maintaining multiple stable projects, you might have noticed that GitH
 * Run `python3 reenable.py`.
   * Figure out how to schedule it monthly.
 
-## Automated with systemd
+## Meta automation
+
+* Fork this repo!
+* Create a personal token with `repo`, `workflow` at https://github.com/settings/tokens
+  * Add it as a repository secret (name `PERSONAL_TOKEN`) at https://github.com/[username]/reenable-gha/settings/secrets/actions/new
+* Make sure that Actions are enabled in the fork.
+
+## Self-hosted automation with systemd
 
 * Create a token with `repo`, `workflow` at https://github.com/settings/tokens
   * Paste it into the file *reenable-gha.service* instead of the asterisks.

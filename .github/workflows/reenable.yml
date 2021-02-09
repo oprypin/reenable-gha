@@ -1,0 +1,13 @@
+on:
+  push:
+    branches: [master]
+  schedule:
+    - cron: '0 12 1 * *'  # Monthly each 1st at 12:00
+jobs:
+  reenable:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: python3 reenable.py 2>/dev/null
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_TOKEN }}
