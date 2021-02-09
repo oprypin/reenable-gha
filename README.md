@@ -1,6 +1,15 @@
-# Automatically re-enable GitHub Actions scheduled workflows
+## Automatically re-enable GitHub Actions scheduled workflows
 
 If you're maintaining multiple stable projects, you might have noticed that GitHub simply disables scheduled workflows after seeing no commits for some time. Well, this script won't let it do that if you run it on a schedule. It bumps the expiration date of all your workflows that mention a schedule.
+
+## Base instructions
+
+* Create a token with `repo`, `workflow` at https://github.com/settings/tokens
+  * Export it as the environment variable `GITHUB_TOKEN`
+* Run `python3 reenable.py`.
+  * Figure out how to schedule it monthly.
+
+## Automated with systemd
 
 * Create a token with `repo`, `workflow` at https://github.com/settings/tokens
   * Paste it into the file *reenable-gha.service* instead of the asterisks.
